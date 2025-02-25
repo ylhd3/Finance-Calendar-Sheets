@@ -55,7 +55,7 @@ const numFormat = "£0.00";
 const sumYearFontSize = 25;
 const sumTitleFontSize = 20;
 const sumExpBreakdownFontSize = 17;
-const sumCatergoryFontSize = 13;
+const sumCategoryFontSize = 13;
 
 function CreateCalenderAndSummary(year = 2024){
   calenderName = "Calendar " + year.toString();
@@ -1016,19 +1016,19 @@ function SummarySheet(year){
   summaryCells.setFormulaR1C1(formula);
   summaryCells.setFontFamily(numFontFamily);
 
-  CreateCatergoryTitleCols(monthRow, dropDownCol[0] , titleCol[0], "Left");
-  CreateCatergoryTitleCols(monthRow, dropDownCol[1] , titleCol[1], "Right");
+  CreateCategoryTitleCols(monthRow, dropDownCol[0] , titleCol[0], "Left");
+  CreateCategoryTitleCols(monthRow, dropDownCol[1] , titleCol[1], "Right");
 
 }
 
-function CreateCatergoryTitleCols(row, dropDownCol, titleCol, pos){
+function CreateCategoryTitleCols(row, dropDownCol, titleCol, pos){
 
   let curRow = row;
   let topExpRow = 3;
   let dropDownRg; 
 
   summaryCells = summarySS.getRange(dropDownCol + curRow.toString());
-  summaryCells.setValue("Catergories");
+  summaryCells.setValue("Categories");
   summaryCells.setHorizontalAlignment("center");
   summaryCells.setFontSize(genericTableFontSize);
   summaryCells.setFontWeight("bold");
@@ -1067,7 +1067,7 @@ function CreateCatergoryTitleCols(row, dropDownCol, titleCol, pos){
 
   summaryCells = summarySS.getRange(titleCol + curRow.toString() + ":" + titleCol + (curRow + 2).toString());
   summaryCells.merge();
-  summaryCells.setFontSize(sumCatergoryFontSize);
+  summaryCells.setFontSize(sumCategoryFontSize);
   summaryCells.setHorizontalAlignment("center");
   summaryCells.setVerticalAlignment("middle");
   summaryCells.setValue("Totals");
@@ -1085,7 +1085,7 @@ function CreateCatergoryTitleCols(row, dropDownCol, titleCol, pos){
 
   summaryCells = summarySS.getRange(titleCol + curRow.toString() + ":" + titleCol + (curRow + 1).toString());
   summaryCells.merge();
-  summaryCells.setFontSize(sumCatergoryFontSize);
+  summaryCells.setFontSize(sumCategoryFontSize);
   summaryCells.setHorizontalAlignment("center");
   summaryCells.setVerticalAlignment("middle");
   summaryCells.setValue("Income");
@@ -1096,7 +1096,7 @@ function CreateCatergoryTitleCols(row, dropDownCol, titleCol, pos){
 
   summaryCells = summarySS.getRange(titleCol + curRow.toString() + ":" + titleCol + (curRow + 2).toString());
   summaryCells.merge();
-  summaryCells.setFontSize(sumCatergoryFontSize);
+  summaryCells.setFontSize(sumCategoryFontSize);
   summaryCells.setHorizontalAlignment("center");
   summaryCells.setVerticalAlignment("middle");
   summaryCells.setValue("Excess");
